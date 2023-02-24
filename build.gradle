@@ -1,0 +1,33 @@
+plugins {
+    id 'groovy'
+}
+
+repositories {
+    mavenCentral()
+}
+
+// 生成启动脚本打包
+apply plugin: 'application'
+applicationName = 'channel-tool'
+version='v2.0.0'
+mainClassName = 'com.ehangwork.tool.channel.ChannelTool'
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    implementation 'org.codehaus.groovy:groovy-all:2.3.11'
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+
+    // https://mvnrepository.com/artifact/net.lingala.zip4j/zip4j
+    implementation group: 'net.lingala.zip4j', name: 'zip4j', version: '1.3.2'
+    // https://mvnrepository.com/artifact/commons-io/commons-io
+    implementation group: 'commons-io', name: 'commons-io', version: '2.6'
+    // https://mvnrepository.com/artifact/info.picocli/picocli
+    implementation group: 'info.picocli', name: 'picocli', version: '3.8.0'
+
+    // https://mvnrepository.com/artifact/org.apache.poi/poi
+    implementation group: 'org.apache.poi', name: 'poi', version: '3.10-FINAL'
+    implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '3.10-FINAL'
+
+
+}
