@@ -5,15 +5,16 @@ Jenkins 构建Android渠道包脚本程序！
 
 ### 快速开始
 
-1. 下载tool下的工具包并解压缩
+1. [下载tool下的工具包并解压缩](https://github.com/ehangwork/apk-channel-generator/tree/master/tool)
 2. 配置Path，指定bin目录即可在任何目录调用命令channel-tool
 3. 支持子命令有 show, channel-generator
+4. [渠道文件定义channel.xlsx](https://github.com/ehangwork/apk-channel-generator/blob/master/tool/channel.xlsx)
 
 Jenkins工程配置下添加Execute shell，执行以下脚本
 ```js
 publishApkPath = "/.jenkins/apks" //源APK位置路径
 channelsFile="/.jenkins/apks/channel.xlsx" //渠道文件, 这里使用excel文件
-outputPath="/.jenkins/apks/channels"//生成渠道包存放目录
+outputPath="/.jenkins/apks/channels" //生成渠道包存放目录
 appName="app-release.apk" //app文件名称
 
 channel-tool channel-generator $publishApkPath $channelsFile -o $outputPath --apkFileName $appName
